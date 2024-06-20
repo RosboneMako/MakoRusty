@@ -1,4 +1,4 @@
-# MakoRusty
+# Mako Rusty
 A demo Juce VST Guitar Amplifier Simulation. 
 * Tested on Windows only.
 * Written in Visual C++ 2022.
