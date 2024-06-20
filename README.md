@@ -29,7 +29,7 @@ A Juce/C++ VST3 written to simulate an older style guitar amplifier.
 This VST is designed to mimic a low gain guitar amplifier. It applies an EQ to the guitar signal before it
 applies any gain. 
 
-The guitar signal chain thru the VST is:
+The guitar signal chain thru the VST is:  
 Guitar -> Noise Gate -> Compressor -> Low Cut -> EQ -> Gain -> Impulse Response Speaker Sim
 
 COMPRESSOR  
@@ -39,8 +39,8 @@ jingle and allow for close to breakup sounds.
 The single control is for the compressor THRESHOLD. This is the volume the incoming signal must hit to trigger the
 compressor. 
 
-A setting of 1.0 (Full On) means the compressor is off and not being used.
-A setting of 3 o'clock will largely compress the signal and is good for edge of breakup type sounds.
+A setting of 1.0 (Full On) means the compressor is off and not being used.  
+A setting of 3 o'clock will largely compress the signal and is good for edge of breakup type sounds.  
 
 LOW CUT  
 As the gain is increased, low frequencies will overwhelm the distortion stage creating a muffled bassy sound.
