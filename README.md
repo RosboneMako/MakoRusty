@@ -1,5 +1,6 @@
 # Mako Rusty
-A demo Juce VST Guitar Amplifier Simulation. 
+* A demo Juce VST Guitar Amplifier Simulation.
+* Sample code.
 * Tested on Windows only.
 * Written in Visual C++ 2022.
 * Written for new programmers, not complicated.
