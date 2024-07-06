@@ -9,7 +9,7 @@
 
 VERSION
 ------------------------------------------------------------------
-1.00 - Initial release.
+1.00 - Initial release.  
 1.01 - Added amplifier Sag, Symmetry, and High Cut.
 
 DISCLAIMER
