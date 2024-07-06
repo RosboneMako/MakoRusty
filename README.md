@@ -4,12 +4,13 @@
 * Tested on Windows only.
 * Written in Visual C++ 2022.
 * Written for new programmers, not complicated.
-* Version: 1.00
-* Posted: June 20, 2024
+* Version: 1.01
+* Posted: July 6, 2024
 
 VERSION
 ------------------------------------------------------------------
 1.00 - Initial release.
+1.01 - Added amplifier Sag, Symmetry, and High Cut.
 
 DISCLAIMER
 ------------------------------------------------------------------  
@@ -31,7 +32,13 @@ This VST is designed to mimic a low gain guitar amplifier. It applies an EQ to t
 applies any gain. 
 
 The guitar signal chain thru the VST is:  
-Guitar -> Noise Gate -> Compressor -> Low Cut -> EQ -> Gain -> Impulse Response Speaker Sim
+Guitar -> Noise Gate -> EQ -> Gain -> High Cut -> Impulse Response Speaker Sim -> Compressor
+
+EQ BEFORE GAIN  
+Placing the EQ section before the gain stages gives you full control of the distortion voice. This works best for low to medium gain amplifiers.
+Excessive bass and treble into a high gain stage can sound very bad.  
+
+NOTE: Since our EQ circuit adds volume, it can be used to boost distortion.
 
 COMPRESSOR  
 Since the VST is trying to duplicate and older style cleanish amp, a compressor was added to bring out the
@@ -41,12 +48,9 @@ The single control is for the compressor THRESHOLD. This is the volume the incom
 compressor. 
 
 A setting of 1.0 (Full On) means the compressor is off and not being used.  
-A setting of 3 o'clock will largely compress the signal and is good for edge of breakup type sounds.  
 
-LOW CUT  
-As the gain is increased, low frequencies will overwhelm the distortion stage creating a muffled bassy sound.
-Having a low cut filter lets you reduce some of the very low frequencies before gain. The default value is 80 Hz.
-The range of the control is 20 - 200 Hz.
+HIGH CUT  
+As gain is added there is an increase in upper harmonics. the high cut lets you tame the harsh biting highs.
 
 EQ  
 The VST uses a simple 5 band EQ style filter style. There are 11 EQs avaialaibe with varying Cutoff Frequencies (Fc) 
@@ -54,6 +58,17 @@ and filter Q's.
 
 GAIN   
 The signal gathers gain thru the EQ section. That signal is then sent thru some soft clipping code to add distortion.
-The overall distortion is a combination of EQ, Gain, and compressor settings. 
+The overall distortion is a combination of EQ, Gain, and compressor settings. Amplifier Sag and Symmetry have been added and depending on the setting
+they will add strange distortion as well. 
 
+AMPLIFIER SAG  
+Amplifier Sag is a setting that will soften fast rising edges of your signal. This effect is trying to simulate when an amplifier is being pushed so hard
+that its power supply begins to run out of power. The effect added here is based on a fast recovering circuit. Very fast edges are reduced only to the
+point the entire waveform gets heavily distorted.
 
+If the supply was very slow to recover, the effect would sound like a typical compressor. Letting signal thru before it runs out of power and then lowering volume
+until it can revcover. In this case, just use a compressor. 
+
+AMPLIFIER ASYMMETRY  
+In some Tube circuits a situation can occur where the positive and negative halves of a signal can differ in gain and shape. The effect here gradually reduces
+and distorts the negative part of the signal. When added slightly, the effect can soften the tone. When heavily added, distortion will be present. 
